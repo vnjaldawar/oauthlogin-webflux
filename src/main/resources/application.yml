@@ -1,0 +1,51 @@
+server:
+  port: 8080
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.security.oauth2: DEBUG
+    org.springframework.cloud.gateway: DEBUG
+    org.springframework.http.server.reactive: DEBUG
+    org.springframework.web.reactive: DEBUG
+    reactor.netty: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        provider:
+          keycloak:
+            issuer-uri: http://localhost:8180/auth/realms/demo/
+        registration:
+          keycloak:
+            client-id: spring-security
+            client-secret: 53007b03-2756-492e-b2ac-a9c53933f62e
+          #github:
+          #  client-id: 33f3653875b4ca3884ca
+          #  client-secret: 9957c61c72bfdac3767a083e40e6f512c5251654
+
+#spring:
+#  security:
+#    oauth2:
+#      client:
+#        provider:
+#          keycloak:
+#            issuer-uri: http://localhost:8180/auth/realms/demo/
+#            # authorization-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/auth
+#            # token-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/token
+#            # user-info-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/userinfo
+#            # jwk-set-uri: http://localhost:8180/auth/realms/demo/protocol/openid-connect/certs
+#        registration:
+##          keycloak:
+#            client-id: spring-security
+#            client-secret: 53007b03-2756-492e-b2ac-a9c53933f62e
+  #cloud:
+  #  gateway:
+  #    default-filters:
+  #    - TokenRelay        
+            
